@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('homework', function (Blueprint $table) {
             $table->id();
             $table->foreignId('lesson_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('course_id')->constrained()->cascadeOnDelete();
             $table->string('title');
             $table->text('description')->nullable();
             $table->text('type')->nullable(); //php, html, c#,......
-            $table->dateTime('due_date');
+            $table->string('due_date');
             $table->integer('score_max');
             $table->timestamps();
         });

@@ -8,9 +8,18 @@ use App\Http\Requests\UpdateCourseRequest;
 
 class CourseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public function showcourse(Course $course)
+    {
+        $user = auth()->user();
+        $courses = $user->courses->where('status', 'continue');
+        $completedCourses = $user->courses->where('status', 'completed');
+        return view('showcourse',[
+            'course' => $course,
+            'userr' => $user,
+            'courses' => $courses,
+            'CompletedCourses' => $completedCourses,
+        ]);
+    }
     public function index()
     {
         //
@@ -29,7 +38,13 @@ class CourseController extends Controller
      */
     public function store(StoreCourseRequest $request)
     {
-        //
+       $user=auth()->user();
+        $course=Course::create([
+            'name' => $request->name,
+            'status' => 'continue'
+        ]);
+        $course->teachers()->attach($user->id,['type' => 'teacher']);
+        return redirect()->route('dashboard');
     }
 
     /**
@@ -45,7 +60,13 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
-        //
+        
+    }
+    public function completecourse(Course $course)
+    {
+        $course->status="completed";
+        $course->save();
+        return redirect()->route('dashboard');
     }
 
     /**

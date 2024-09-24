@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 class File extends Model
 {
     use HasFactory;
-    protected $fillable = ['path'];
+    protected $fillable = ['path','name'];
 
     public function fileable(): MorphTo
     {

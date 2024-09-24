@@ -9,14 +9,28 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Course extends Model
 {
     use HasFactory;
-    public function users(): BelongsToMany
+    public function students(): BelongsToMany
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class)
+                    ->withPivot('type')
+                    ->wherePivot('type', 'student')
+                    ->orderBy('surname');  // Alfavit tartibida saralash
+    }
+    public function teachers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class)
+                    ->withPivot('type')
+                    ->wherePivot('type', 'teacher')
+                    ->orderBy('surname');  // Alfavit tartibida saralash
     }
 
     public function lessons(): HasMany
     {
         return $this->hasMany(Lesson::class);
     }
-    protected $fillable = ['name'];
+    public function homeworks(): HasMany
+    {
+        return $this->hasMany(Homework::class);
+    }
+    protected $fillable = ['name','status'];
 }

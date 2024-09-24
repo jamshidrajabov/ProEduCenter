@@ -11,7 +11,7 @@ class StoreHomeworkRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,13 @@ class StoreHomeworkRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'lesson_id' => 'required',
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'due_date' => 'required|string',
+            'files.*' => 'nullable|file|mimes:jpg,png,pdf,docx,xlsx,xls,doc,zip,rar,ppt,pptx',
+            'type' => 'required|string',
+            'score_max' => 'required|numeric'
         ];
     }
 }

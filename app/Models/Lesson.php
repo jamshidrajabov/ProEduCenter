@@ -17,7 +17,7 @@ class Lesson extends Model
         return $this->belongsTo(Course::class);
     }
 
-    public function homeworks(): HasMany
+    public function homeworks(): HasMany    
     {
         return $this->hasMany(Homework::class);
     }

@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Answer extends Model
 {
+    protected $fillable = ['user_id', 'homework_id', 'answer', 'score'];
     use HasFactory;
     public function files(): MorphMany
     {

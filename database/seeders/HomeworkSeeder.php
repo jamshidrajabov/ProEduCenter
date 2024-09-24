@@ -15,22 +15,26 @@ class HomeworkSeeder extends Seeder
     {
         Homework::create([
                 'lesson_id' => 1, 
+                'course_id' => 1, 
                 'title' => 'Homework 1',
                 'description' => 'Complete the given task',
-                'type' => 'php',
+                'type' => 'php_code',
                 'due_date' => now()->addDays(1),
                 'score_max' => 50]);
         Homework::create([
+                'course_id' => 1, 
                 'lesson_id' => 1, 
                 'title' => 'Homework 2',
                 'description' => 'Solve the given problem',
-                'type' => 'php',
+                'type' => 'php_code',
                 'due_date' => now()->addDays(2),
                 'score_max' => 50]);
         Homework::create([
+                'course_id' => 1, 
                 'lesson_id' => 2, 
                 'title' => 'Homework 1',
                 'description' => 'Complete the given task',
+                'type' => 'php_code',
                 'due_date' => now()->addDays(1),
                 'score_max' => 100]);
     }

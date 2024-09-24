@@ -31,20 +31,27 @@ class RegisteredUserController extends Controller
      */
     public function store(StoreUserRequest $request): RedirectResponse
     {
-        $photo = $request->file('photo');
-        $photoName = time() . '.' . $photo->getClientOriginalExtension();
-        $photo->storeAs('public/photos', $photoName);
+        $defaultPhotoPath = 'public/photos/default.png';
+
+        if ($request->hasFile('photo')) {
+            $photo = $request->file('photo');
+            $photoName = time() . '.' . $photo->getClientOriginalExtension();
+            $photoPath = $photo->storeAs('public/photos', $photoName);
+        } else {
+            $photoPath = $defaultPhotoPath;
+        }
         $user = User::create([
+            'role_id' => $request->role, 
             'surname' => $request->surname,
             'name' => $request->name,
-            'photo' => $photoName,
-            'phone' => $request->photo,
-            'passport' => $request->photo,
-            'birth' => $request->photo,
+            'photo' => $photoPath,
+            'phone' => $request->phone,
+            'passport' => $request->passport,
+            'birth' => $request->birth,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
+        
         event(new Registered($user));
 
         Auth::login($user);

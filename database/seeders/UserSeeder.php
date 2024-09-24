@@ -16,7 +16,7 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Jamshid',
             'surname' => 'Rajabov',
-            'photo' => 'default.jpg',
+            'photo' => 'public/photos/default.png',
             'phone' => '+998994205841',
             'passport' => 'KA1111111',
             'birth' => '21.06.2002',
@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Teacher',
             'surname' => 'Rajabov',
-            'photo' => 'default.jpg',
+            'photo' => 'public/photos/default.png',
             'phone' => '+998991111111',
             'passport' => 'KA1111111',
             'birth' => '21.06.2002',
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Student',
             'surname' => 'Rajabov',
-            'photo' => 'default.jpg',
+            'photo' => 'public/photos/default.png',
             'phone' => '+998991111111',
             'passport' => 'KA1111111',
             'birth' => '21.06.2002',

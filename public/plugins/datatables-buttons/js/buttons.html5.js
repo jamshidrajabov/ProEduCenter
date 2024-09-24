@@ -852,10 +852,10 @@ DataTable.ext.buttons.copyHtml5 = {
 
 				if (successful) {
 					dt.buttons.info(
-						dt.i18n( 'buttons.copyTitle', 'Copy to clipboard' ),
+						dt.i18n( 'buttons.copyTitle', 'Nusxalandi' ),
 						dt.i18n( 'buttons.copySuccess', {
-							1: 'Copied one row to clipboard',
-							_: 'Copied %d rows to clipboard'
+							1: '1 ta qator nusxalandi',
+							_: ' %d ta qator nusxalandi'
 						}, exportData.rows ),
 						2000
 					);
@@ -874,7 +874,7 @@ DataTable.ext.buttons.copyHtml5 = {
 			)
 			.append( hiddenDiv );
 
-		dt.buttons.info( dt.i18n( 'buttons.copyTitle', 'Copy to clipboard' ), message, 0 );
+		dt.buttons.info( dt.i18n( 'buttons.copyTitle', 'Nusxalandi' ), message, 0 );
 
 		// Select the text so when the user activates their system clipboard
 		// it will copy that text

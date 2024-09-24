@@ -11,7 +11,7 @@ class StoreLessonRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class StoreLessonRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'files.*' => 'nullable|file|mimes:jpg,png,pdf,docx,xlsx,xls,doc,zip,rar,ppt,pptx', // Fayllar uchun validatsiya qoidalari
         ];
     }
 }

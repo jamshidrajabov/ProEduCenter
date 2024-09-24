@@ -11557,7 +11557,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sLast": "Last",
+				"sLast": "Keyingi",
 	
 	
 				/**
@@ -11580,7 +11580,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "Keyingi",
 	
 	
 				/**
@@ -11603,7 +11603,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "Oldingi"
 			},
 	
 			/**
@@ -11626,7 +11626,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sEmptyTable": "No data available in table",
+			"sEmptyTable": "Ma'lumot topilmadi",
 	
 	
 			/**
@@ -11658,7 +11658,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "Showing _START_ to _END_ of _TOTAL_ yozuvdan",
 	
 	
 			/**
@@ -11943,7 +11943,7 @@
 			 * displayed after filtering. `emptyTable` is shown when there is simply no
 			 * information in the table at all (regardless of filtering).
 			 *  @type string
-			 *  @default No matching records found
+			 *  @default Ma'lumot topilmadi
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.zeroRecords
@@ -11957,7 +11957,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sZeroRecords": "No matching records found"
+			"sZeroRecords": "Ma'lumot topilmadi"
 		},
 	
 	

@@ -26,8 +26,8 @@ class StoreUserRequest extends FormRequest
         return [
             'surname' => ['required', 'string', 'max:255'],
             'name' => ['required', 'string', 'max:255'],
-            'photo' => ['photo|mimes:jpeg,png,jpg,gif|max:2048'],
-            'phone' => ['required', 'string', 'max:13','regex:/^\+998[0-9]{9}$/'],
+            'photo' => ['mimes:jpg,jpeg,png,bmp|max:2048'],
+            'phone' => ['required', 'string'],
             'passport' => ['required','regex:/^[A-Za-z]{2}[0-9]{7}$/'],
             'birth' => ['required'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
@@ -42,7 +42,6 @@ class StoreUserRequest extends FormRequest
             'name.required' => 'Ism kiritilishi shart',
             'name.string' => 'Ism satr ko\'rinishda bo\'lishi shart',
             'phone.required' => 'Telefon raqam kiritilishi shart',
-            'phone.regex' => 'Telefon raqam +998XXXXXXXXX formatda bo\'lishi shart',
             'passport.required' => 'Pasport seriya va raqam kiritilishi shart',
             'passport.regex' => 'Pasport XX0000000 ko\'rinishda kiritilishi shart',
             'birth.required'=>'Tug\'ilgan kun kiritilishi shart',

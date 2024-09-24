@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('homework_id');
             $table->foreignId('user_id');
-            $table->string('title');
             $table->text('answer')->nullable();
             $table->integer('score')->nullable();
             $table->timestamps();
